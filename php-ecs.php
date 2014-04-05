@@ -38,6 +38,7 @@ class ECS {
         protected $referrer = 'PhpEcs-VERSION';
         protected $method;                            
         protected $status;
+	
 
 	public function __construct ( $username, $password, $apiurl) {
     		$this->username = $username;
@@ -55,7 +56,7 @@ class ECS {
                 curl_setopt($ch, CURLOPT_TIMEOUT, $this->timeout);
                 $output = curl_exec($ch);
                 curl_close($ch);
-		echo $output;
+		return json_decode($output);
 	
 	}
 
@@ -65,15 +66,14 @@ class ECS {
                 curl_setopt($ch, CURLOPT_HTTPHEADER, Array('Content-type:application/json', 'Easycloud-user:'.$this->username , 'Easycloud-token:'.$this->password));
 	
 		curl_setopt($ch, CURLOPT_POST, 1);
-		//TODO
-		curl_setopt($ch, CURLOPT_POSTFIELDS, "postvar1=value1&postvar2=value2&postvar3=value3");	
+		curl_setopt($ch, CURLOPT_POSTFIELDS, "os=".$os."&plan=".$plan."&location=".$location);	
                 
 		curl_setopt($ch, CURLOPT_REFERER, $this->referrer);
                 curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
                 curl_setopt($ch, CURLOPT_TIMEOUT, $this->timeout);
                 $output = curl_exec($ch);
                 curl_close($ch);
-                echo $output;
+		return json_decode($output);
 	
 	}
 
