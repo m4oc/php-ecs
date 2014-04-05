@@ -32,16 +32,17 @@ class ECS {
 
 	protected $username;
 	protected $password;
-
-	protected $apiurl   = 'http://easycloud-dev.seeweb.it/api/public/easycloud/';        
+	protected $apiurl;
+        
 	protected $timeout  = 30;                	  
         protected $referrer = 'PhpEcs-VERSION';
         protected $method;                            
         protected $status;
 
-	public function __construct ( $username, $password) {
+	public function __construct ( $username, $password, $apiurl) {
     		$this->username = $username;
     		$this->password = $password;
+    		$this->apiurl = $apiurl;
   	}
 
 	function getinfo() {
