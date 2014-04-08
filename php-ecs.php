@@ -46,6 +46,7 @@ class ECS {
     		$this->apiurl = $apiurl;
   	}
 
+	/* Get account information */
 	function getinfo() {
 
                 $ch = curl_init();
@@ -56,23 +57,27 @@ class ECS {
                 curl_setopt($ch, CURLOPT_TIMEOUT, $this->timeout);
                 $output = curl_exec($ch);
                 curl_close($ch);
+
 		return json_decode($output);
 	
 	}
 
+	/* Create server */
 	function create($os, $plan, $location) {
 		$ch = curl_init();
                 curl_setopt($ch, CURLOPT_URL, $this->apiurl);
                 curl_setopt($ch, CURLOPT_HTTPHEADER, Array('Content-type:application/json', 'Easycloud-user:'.$this->username , 'Easycloud-token:'.$this->password));
 	
 		curl_setopt($ch, CURLOPT_POST, 1);
-		curl_setopt($ch, CURLOPT_POSTFIELDS, "os=".$os."&plan=".$plan."&location=".$location);	
-                
+		$arr = array('os' => $os, 'plan' => $plan, 'location' => $location);
+		
+		curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($arr));	
 		curl_setopt($ch, CURLOPT_REFERER, $this->referrer);
                 curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
                 curl_setopt($ch, CURLOPT_TIMEOUT, $this->timeout);
-                $output = curl_exec($ch);
+		$output = curl_exec($ch);
                 curl_close($ch);
+
 		return json_decode($output);
 	
 	}
