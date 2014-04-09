@@ -82,5 +82,7 @@ class ECS {
 	
 	}
 
+        /* Delete server */
+
 
 }
