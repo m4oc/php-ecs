@@ -83,6 +83,44 @@ class ECS {
 	}
 
         /* Delete server */
+        function delete($ecs) {
+                $ch = curl_init();
+                curl_setopt($ch, CURLOPT_URL, $this->apiurl.$ecs);
+                curl_setopt($ch, CURLOPT_HTTPHEADER, Array('Content-type:application/json', 'Easycloud-user:'.$this->username , 'Easycloud-token:'.$this->password));
+
+
+		curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "DELETE");
+                
+		curl_setopt($ch, CURLOPT_REFERER, $this->referrer);
+                curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+                curl_setopt($ch, CURLOPT_TIMEOUT, $this->timeout);
+                $output = curl_exec($ch);
+                curl_close($ch);
+
+                return json_decode($output);
+
+        }
+
+        /* Action */
+        function action($ecs, $action, $data) {
+                $ch = curl_init();
+                curl_setopt($ch, CURLOPT_URL, $this->apiurl.$ecs);
+                curl_setopt($ch, CURLOPT_HTTPHEADER, Array('Content-type:application/json', 'Easycloud-user:'.$this->username , 'Easycloud-token:'.$this->password));
+
+		curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "PUT");
+                $arr = array('action' => $action, 'data' => $data);
+                curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($arr));
+
+                curl_setopt($ch, CURLOPT_REFERER, $this->referrer);
+                curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+                curl_setopt($ch, CURLOPT_TIMEOUT, $this->timeout);
+                $output = curl_exec($ch);
+                curl_close($ch);
+
+                return json_decode($output);
+
+        }
+
 
 
 }
