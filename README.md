@@ -1,4 +1,4 @@
-Seeweb PHP SDK (v.0.1-alfa)
+Seeweb Unofficial PHP SDK for Easycloud (v.0.1-alfa)
 
 Product information: [http://www.seeweb.it/easycloudserver](http://www.seeweb.it/easycloudserver)
 
@@ -8,10 +8,15 @@ Usage
 -----
 
 USERNAME = Your account username
+
 PASSWORD = Your account password
+
 TEMPLATENAME = Name of bootable image, get by getinfo()
+
 SIZE = Avariable size see [DOC](http://www.wikicloud.it/EasyCloud)
+
 LOCATION = Avariable location see [DOC](http://www.wikicloud.it/EasyCloud)
+
 ECSNAME = Server name
 
 Include library and basic usage
