@@ -26,6 +26,7 @@ if (!function_exists('json_decode')) {
 }
 
 
+/* Easy Cloud Server Class*/
 class ECS {
 
 	const VERSION = '0.1';
