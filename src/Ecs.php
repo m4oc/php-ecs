@@ -1,4 +1,4 @@
-<?
+<?php
 /**
 * 
 * Marco Cristofanilli (marco.cristofanilli@gmail.com)
@@ -17,6 +17,8 @@
 * under the License.
 */
 
+namespace Ecs;
+
 /* Verify curl install */
 if (!function_exists('curl_init')) {
   throw new Exception('PhpECS needs the CURL PHP extension.');
@@ -27,9 +29,9 @@ if (!function_exists('json_decode')) {
 
 
 /* Easy Cloud Server Class*/
-class ECS {
+class Ecs {
 
-	const VERSION = '0.1';
+	const VERSION = '0.2';
 
 	protected $username;
 	protected $password;

@@ -1,4 +1,4 @@
-Seeweb Unofficial PHP SDK for Easycloud (v.0.1-alfa)
+Seeweb Unofficial PHP SDK for Easycloud (v.0.2)
 
 Product information: [http://www.seeweb.it/easycloudserver](http://www.seeweb.it/easycloudserver)
 
@@ -22,9 +22,9 @@ ECSNAME = Server name
 Include library and basic usage
 
 ```php
-require 'php-ecs.php';
+require 'src/Ecs.php';
 
-$ecs = new ECS ('USERNAME','PASSWORD',' https://ecs.cloudcenter.seeweb.it/api/public/easycloud/');
+$ecs = new Ecs ('USERNAME','PASSWORD',' https://ecs.cloudcenter.seeweb.it/api/public/easycloud/');
 
 ```
 
@@ -35,14 +35,14 @@ $response = $ecs->getinfo();
 print_r($response);
 ```
 
-Create new ECS
+Create new Ecs
 
 ```php
 $response = $ecs->create('TEMPLATENAME','SIZE','LOCATION');
 print_r($response);
 ```
 
-Delete ECS
+Delete Ecs
 
 ```php
 $response = $ecs->delete('ECSNAME');
