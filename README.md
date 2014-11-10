@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/m4oc/php-ecs.svg)](https://travis-ci.org/m4oc/php-ecs)
+
 Seeweb Unofficial PHP SDK for Easycloud (v.0.2)
 
 Product information: [http://www.seeweb.it/easycloudserver](http://www.seeweb.it/easycloudserver)

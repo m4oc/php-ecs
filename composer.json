@@ -12,7 +12,9 @@
     ],
     "require": {
         "php": ">=5.3.3",
-        "curl-init": "*"
+        "lib-curl": "*",
+        "ext-curl": "*",
+        "ext-json": "*"
     },
     "autoload": {
         "classmap": [
