@@ -24,7 +24,8 @@ ECSNAME = Server name
 Include library and basic usage
 
 ```php
-require 'src/Ecs.php';
+namespace Ecs;
+require 'vendor/autoload.php';
 
 $ecs = new Ecs ('USERNAME','PASSWORD',' https://ecs.cloudcenter.seeweb.it/api/public/easycloud/');
 
