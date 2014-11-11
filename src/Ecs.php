@@ -44,9 +44,22 @@ class Ecs {
 	
 
 	public function __construct ( $username, $password, $apiurl) {
-    		$this->username = $username;
-    		$this->password = $password;
-    		$this->apiurl = $apiurl;
+
+ 		if (!is_string($username)) {
+			throw new InvalidArgumentException('Invalid username');
+		}
+
+        	if (!is_string($password)) {
+                	throw new InvalidArgumentException('Invalid password');
+        	}
+
+        	if (!is_string($apiurl)) {
+                	throw new InvalidArgumentException('Invalid api url');
+        	}
+    			$this->username = $username;
+    			$this->password = $password;
+    			$this->apiurl = $apiurl;
+
   	}
 
 	/* Get account information */

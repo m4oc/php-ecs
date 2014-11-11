@@ -7,4 +7,5 @@ $baseDir = dirname($vendorDir);
 
 return array(
     'Ecs\\Ecs' => $baseDir . '/src/Ecs.php',
+    'Ecs\\InvalidArgumentException' => $baseDir . '/src/exceptions/InvalidArgumentException.php',
 );
